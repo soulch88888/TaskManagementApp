@@ -13,6 +13,13 @@
     if($row_num>0){
         $data = mysqli_fetch_assoc($result);
         $_SESSION["user_info"]=$data;
+
+        $user_id= $_SESSION["user_info"]["id"];
+        $query2="SELECT `task`.*, `user-task`.`user-id` FROM `user-task` LEFT JOIN `task` ON `user-task`.`task-id` = `task`.`id` WHERE (`user-task`.`user-id` = '$user_id')";
+        $result2=mysqli_query($con,$query2);
+        $data2= mysqli_fetch_assoc($result2);
+        $_SESSION["task_info"]=$data2;
+
         header("location:profile.php");
     }else{
         header("location:login.php?error=1");
