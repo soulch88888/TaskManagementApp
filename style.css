@@ -1,0 +1,48 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: whitesmoke; 
+    font-family: Tahoma; 
+}
+
+header div {
+    padding: 20px;
+}
+
+header a {
+    color: black;
+}
+
+header {
+    background-color: rgb(83, 38, 218);
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(59, 47, 195);
+}
+
+input,
+textarea {
+    margin: 4px;
+    padding: 8px;
+    width: 100%;
+}
+
+button {
+    padding: 10px;
+    cursor: pointer;
+}
