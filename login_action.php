@@ -4,7 +4,7 @@
     $pass=$_POST['pass'];
     session_start();
 
-    $query="SELECT * FROM `user` WHERE `name` LIKE '$username' AND `pass` LIKE '$pass'";
+    $query="SELECT * FROM `user` WHERE `username` LIKE '$username' AND `password` LIKE '$pass'";
     
     $result=mysqli_query($con,$query);
 
