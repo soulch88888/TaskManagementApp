@@ -12,7 +12,7 @@
     <h1>
         <?php
             echo("--------------------------------<br>");
-            echo("Hello this is my home page. <br>");
+            echo("Welcome to the task management app. <br>");
             echo("--------------------------------<br>");
         ?>
     </h1>
