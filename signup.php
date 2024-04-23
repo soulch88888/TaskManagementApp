@@ -15,6 +15,8 @@
         <h1>Sign Up</h1>
         <form action="signup_action.php" method="post">
             <input type="text" name="username" placeholder="UserName">
+            <input type="text" name="fname" placeholder="First Name">
+            <input type="text" name="lname" placeholder="Last Name">
             <input type="email" name="email" placeholder="Email">
             <input type="password" name="pass" placeholder="Password">
             <br><br>
