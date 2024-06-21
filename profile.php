@@ -83,5 +83,9 @@ if (isset($_GET['toggle'])) {
         <input type="hidden" name="toggle" value="true">
         <button type="submit">Toggle Display</button>
     </form>
+    <a href="index.php">
+    <button>logout</button>
+    <?php session_destroy() ?>
+    </a>
 </body>
 </html>
