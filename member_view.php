@@ -12,6 +12,34 @@
             Profile
         </a>   
     </header>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat fugit incidunt expedita reiciendis quibusdam dolore temporibus quis illum commodi. Repudiandae unde delectus consequatur, corrupti quis optio vero dicta illum architecto!</p>
+    <div class="table">
+        <table>
+        <tr>
+            <td>
+                task1 author1 status
+            </td>
+            <td>
+                <button>Edit</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                task2 author2 status
+            </td>
+            <td>
+                <button>Edit</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                task3 author3 status
+            </td>
+            <td>
+                <button>Edit</button>
+            </td>
+        </tr>
+        </table> 
+    </div>
+    
 </body>
 </html>
