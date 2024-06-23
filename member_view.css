@@ -13,8 +13,25 @@ header {
     background-color: red;
 }
 .table {
-    width: 100%;
+    margin-top: 2em;
     display: flex;
     justify-content: center;
-    border: 2px solid blue;
+
+}
+ tr, td{
+    border: 2px solid black;
+}
+.bt2{
+    display: flex;
+    justify-content: flex-end;
+}
+.bt2 button{
+    border-radius: 5px;
+}
+.pname{
+   display: flex;
+   justify-content: center;
+}
+.pname h2{
+    border-bottom: 2px solid black;
 }
