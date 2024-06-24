@@ -1,6 +1,6 @@
 <?php
-    include('db-config/connection.php'); //connecting to database
-    $username=$_POST['username']; //function post takes the name of the element 
+    include('db-config/connection.php');
+    $username=$_POST['username']; 
     $pass=$_POST['pass'];
     session_start();
 
@@ -16,6 +16,10 @@
 
         if($_SESSION["user_info"]["Role"]=="Team Member"){
             header("location:member_view.php");
+        }elseif($_SESSION["user_info"]["Role"]=="Team Leader"){
+            header("location:lead_project_view.php");
+        }elseif($_SESSION["user_info"]["Role"]=="admin"){
+            header("location:admin_view.php");
         }
 
         

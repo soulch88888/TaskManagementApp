@@ -9,7 +9,7 @@
 
 <body>
     <?php require("header.php"); ?>
-    <h1>
+    <h1 style="display: flex; justify-content:center;">
         <?php
             echo("--------------------------------<br>");
             echo("Welcome to the task management app. <br>");

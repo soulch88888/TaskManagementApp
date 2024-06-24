@@ -14,3 +14,10 @@ th {
 a {
     margin: 10px;;
 }
+.bt2{
+    display: flex;
+    justify-content: flex-end;
+}
+.bt2 button{
+    border-radius: 5px;
+}

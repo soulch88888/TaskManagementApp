@@ -18,7 +18,7 @@ $row_num2=mysqli_num_rows($result2);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Team Member</title>
     <link rel="stylesheet" href="member_view.css">
 </head>
 <body>
@@ -35,40 +35,44 @@ $row_num2=mysqli_num_rows($result2);
     </div>
     <?php if($row_num1>0): ?>
     <div class="table">
-        <table>
-        <tr>
+    <table>
+            <?php while(!is_null($task_info)){ ?>
+        <tr><form action="member_task_edit.php" method="post">
             <td>
-                task1 author1 status
+                <?php echo $task_info["id"]; ?>
+                <input type="hidden" name="task_id" value="<?php echo $task_info["id"]; ?>">
             </td>
             <td>
-                <button>Edit</button>
+                <?php echo $task_info["title"]; ?>
+                <input type="hidden" name="task_title" value="<?php echo $task_info["title"]; ?>">
+            </td>
+            <td>
+                <?php echo $task_info["priority"]; ?>
+                <input type="hidden" name="task_priority" value="<?php echo $task_info["priority"]; ?>">
+            </td>
+            <td>
+                <?php echo $task_info["status"]; ?>
+                <input type="hidden" name="task_status" value="<?php echo $task_info["status"]; ?>">
+            </td>
+            <td>
+            <input type="hidden" name="task_body" value="<?php echo $task_info["body"]; ?>">
+                <button type="submit" name="edit">Edit</button>
+                </form> 
             </td>
         </tr>
-        <tr>
-            <td>
-                task2 author2 status
-            </td>
-            <td>
-                <button>Edit</button>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                task3 author3 status
-            </td>
-            <td>
-                <button>Edit</button>
-            </td>
-        </tr>
+        <?php $task_info=mysqli_fetch_assoc($result1);}?>
         </table> 
-        <?php endif;?>
+        
+        <?php else:?>
+            <div style="display:flex; justify-content:center;">you have no assigned tasks</div>
+           <?php endif;?>
     </div>
-    <?php  else:
-        echo("you are not part of any projects");
-        endif;
-        ?>
-    <div class="bt2">
-        <button> logout </button>
-    </div>
+    <?php  else:?>
+        <div style="display:flex; justify-content:center;">you are not part of any projects</div>
+       <?php endif;?>
+    
+    <form action="logout.php" method="post" class="bt2">
+        <button type="submit">logout</button>
+    </form>
 </body>
 </html>
