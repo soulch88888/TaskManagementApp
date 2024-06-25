@@ -5,16 +5,14 @@ session_start();
     $task_priority = $_POST['task_priority'];
     $task_body = $_POST['task_body'];
     $status = $_POST['task_status'];
-    echo $status;
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['change_stat'])){
         $status = $_POST['status'];
         include('db-config/connection.php');
         $query="UPDATE `task` SET `status` = '$status' WHERE `id` = '$task_id'";
-        echo $query;
+        // echo $query;
         $result=mysqli_query($con,$query);
 
-    
-    // header("Location: member_view.php");
+    header("Location: member_view.php");
         
     }
     
