@@ -1,19 +1,20 @@
 <?php
 session_start();
-    $task_id = $_POST['task_id'];
+    $task_id=$_SESSION["task_id"];
     $task_title = $_POST['task_title'];
     $task_priority = $_POST['task_priority'];
     $task_body = $_POST['task_body'];
     $status = $_POST['task_status'];
-    echo $task_id;
-    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['status'])){
+    echo $status;
+    if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['change_stat'])){
         $status = $_POST['status'];
-        echo $status;
         include('db-config/connection.php');
-        $query="UPDATE `task` SET `status` = '$status' WHERE `task`.`id` = '$task_id'";
-        mysqli_query($con,$query);
+        $query="UPDATE `task` SET `status` = '$status' WHERE `id` = '$task_id'";
+        echo $query;
+        $result=mysqli_query($con,$query);
+
     
-    //  header("Location: member_view.php");
+    // header("Location: member_view.php");
         
     }
     
@@ -55,7 +56,12 @@ session_start();
                  <td>Status</td>
                  <td>
                     <form action="" method="post">
-                        <button type="submit" name="status" value="done">Set as done</button>
+                    <input list="stat" name="task_status" placeholder="status">
+                    <datalist id="stat">
+                        <option value="in progress">
+                        <option value="done">
+                    </datalist>
+                        <button type="submit" name="change_stat">Apply</button>
                     </form>
                 </td>
             </tr>

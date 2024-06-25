@@ -64,7 +64,7 @@ $project_name=mysqli_fetch_assoc($result2);
              <?php endif;?>
 
              <form action="add_task.php" method="post" class="Add">
-            <button type="submit">Add Task</button>
+            <button type="submit" >Add Task</button>
             </form>
         <form action="logout.php" method="post" class="bt2">
             <button type="submit">logout</button>

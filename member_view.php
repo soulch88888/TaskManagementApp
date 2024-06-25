@@ -11,7 +11,7 @@ $project_name=mysqli_fetch_assoc($result2);
 $task_info=mysqli_fetch_assoc($result1);
 $row_num1=mysqli_num_rows($result1);
 $row_num2=mysqli_num_rows($result2);
-
+$task_id=$task_info["id"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +37,7 @@ $row_num2=mysqli_num_rows($result2);
     <div class="table">
     <table>
             <?php while(!is_null($task_info)){ ?>
-        <tr><form action="member_task_edit.php" method="post">
+        <tr><form action="member_task_edit.php?<?php echo "task_id=$task_id"; ?>" method="post">
             <td>
                 <?php echo $task_info["id"]; ?>
                 <input type="hidden" name="task_id" value="<?php echo $task_info["id"]; ?>">
@@ -56,7 +56,7 @@ $row_num2=mysqli_num_rows($result2);
             </td>
             <td>
             <input type="hidden" name="task_body" value="<?php echo $task_info["body"]; ?>">
-                <button type="submit" name="edit">Edit</button>
+                <button type="submit" name="edit">Edit</button><?php $_SESSION['task_id']=$task_info["id"];?>
                 </form> 
             </td>
         </tr>

@@ -18,7 +18,7 @@
             header("location:member_view.php");
         }elseif($_SESSION["user_info"]["Role"]=="Team Leader"){
             header("location:lead_project_view.php");
-        }elseif($_SESSION["user_info"]["Role"]=="admin"){
+        }elseif($_SESSION["user_info"]["Role"]=="Admin"){
             header("location:admin_view.php");
         }
 
